@@ -25,6 +25,7 @@
     --original-font : "Cookie";
 }
 body{
+    position: relative;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -60,6 +61,7 @@ hr{
     background-color: var(--main-dark);
     border: none;
 }
+
 .flex{
     display: flex;
 }
@@ -109,10 +111,8 @@ header{
     display: flex;
     flex-direction: column;
     align-items: center;
-
     width: 100%;
     padding-bottom: 1rem;
-    background-color: deeppink;
     background-image: url("/img/bg_cacao_slim_bis.jpg");
     background-repeat: no-repeat;
     background-position: center;
@@ -169,6 +169,7 @@ header h2{
     bottom: 0;
     width: 100%;
     height: 3rem;
+    z-index: 10;
 }
 #navbar_mobile a{
     color: var(--main-light);
@@ -300,4 +301,72 @@ footer p{
 #social{
     width: 100%;
     padding-top: 1rem;
+}
+
+.modal{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(238, 183, 0, 0.2);
+    backdrop-filter: blur(0.7rem);
+    overflow-y: hidden;
+}
+.modal form{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 1rem 2rem;
+    color: var(--main-light);
+    background-color: var(--main-brown);
+}
+.modal input{
+    width: 100%;
+    height: 2.5rem;
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+    font-size: 1.2rem;
+    border: 0.0625rem solid var(--main-brown);
+    border-radius: 0.25rem;
+    background-color: var(--main-light);
+}
+.modal .btn{
+    width: 100%;
+    height: 2.5rem;
+    font-size: 1.2rem;
+}
+
+#closeModal{
+    position: relative;
+    /* top: 1rem;
+    right: 1rem; */
+    justify-self: end;
+    align-self: self-end;
+    width: auto;
+    height: auto;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
+#loginModal p {
+    width: 100%;
+    line-height: 2rem;
+}
+#loginModal span {
+    font-weight: bold;
+    font-style: italic;
+}
+
+.hidden{
+    display: none;
+}
+.deleteScroll{
+    overflow-y: hidden;
 }
