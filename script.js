@@ -29,21 +29,38 @@ const app = {
         console.log("On ouvre la modal : ");
         console.log(props);
         let modalToShow = document.getElementById(props);
-        let bodyToAdapt = document.getElementsByTagName("body");
-        modalToShow.classList.remove("hidden");
-
+        
         let noScroll = document.createAttribute("class");
         noScroll.value="deleteScroll";
         document.body.setAttributeNode(noScroll);
+
+        modalToShow.classList.remove("hidden");
     },
 
     closeModal : function(props){
         console.log("On ferme la modal : ");
         console.log(props);
         let modalToClose = document.getElementById(props);
-        let bodyToAdapt = document.getElementsByTagName("body");
         modalToClose.classList.add("hidden");
-        bodyToAdapt.classList.remove("deleteScroll");
+        document.body.classList.remove("deleteScroll");
+    },
+
+    openMenu : function(props){
+        console.log("On ouvre le menu");
+        let menuToOpen = document.getElementById(props);
+        
+        let noScroll = document.createAttribute("class");
+        noScroll.value="deleteScroll";
+        document.body.setAttributeNode(noScroll)
+        
+        menuToOpen.style.height = "100vh";
+    },
+
+    closeMenu : function(props){
+        console.log("On ferme le menu");
+        let menuToClose = document.getElementById(props);
+        menuToClose.style.height = "0vh";
+        document.body.classList.remove("deleteScroll");
     }
 };
 document.addEventListener("DOMContentLoaded", app.init)
