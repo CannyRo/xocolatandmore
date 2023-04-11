@@ -36,6 +36,17 @@ const app = {
 
         modalToShow.classList.remove("hidden");
     },
+    showModal : function(props){
+        console.log('TOTO');
+        let modalToShow = document.getElementById(props);
+
+        let noScroll = document.createAttribute("class");
+        noScroll.value="deleteScroll";
+        document.body.setAttributeNode(noScroll)
+
+        modalToShow.style.height = "100vh";
+        modalToShow.style.width = "100%";
+    },
 
     closeModal : function(props){
         console.log("On ferme la modal : ");
