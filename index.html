@@ -133,7 +133,7 @@
         <div id="new_product">
             <div class="card_container">
             </div>
-            <button id="ver_mas" class="btn">
+            <button id="ver_mas" class="btn" onclick="app.showMore(app.newAllProducts);">
                 Ver mas
             </button>
         </div>
@@ -162,9 +162,6 @@
     <footer>
         <div id="footer_img">
         </div>
-        <!-- 
-        <img src="./img/3d50dc_9f6a4d752ef9407cb984a3fcefafa5b7_mv2.jpg" alt="" class="card_img">
-        -->
         <div id="agenda">
             <h3>Horarios</h3>
             <p>Lunes a Domingo : 8am a 8pm</p>
@@ -260,20 +257,20 @@
         </div>
     </footer>
     <div id="searchModal" class="modal hidden">
-        <form>
+        <div class="form">
             <button id="closeSearchModal" class="btn closeModal" onclick="app.closeModal('searchModal');">X</button>
             <input type="search" name="search" id="search" placeholder="Producto...">
             <input type="button" value="Buscar" class="btn">
-        </form>
+        </div>
     </div>
     <div id="loginModal" class="modal hidden">
-        <form>
+        <div class="form">
             <button id="closeLoginModal" class="btn closeModal" onclick="app.closeModal('loginModal');">X</button>
             <p>¿Eres nuevo en este sitio? <span onclick="app.closeModal('loginModal');">Regístrate</span></p>
             <input type="text" name="login" id="login" placeholder="Login">
             <input type="password" name="password" id="password" placeholder="Password">
             <input type="button" value="Ingresar" class="btn">
-        </form>
+        </div>
     </div>
     <div id="burgerMenuContainer" class="">
         <div class="menu">

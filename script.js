@@ -93,8 +93,54 @@ const app = {
         console.log("On montre les premières cartes")
     },
 
-    showMore :  function(){
+    showMore :  function(array){
         console.log("On montre tous les autres produits")
+        let restOfArray = array.slice(20)
+        console.log("complete Array :");
+        console.log(array);
+        console.log("restOfArray :");
+        console.log(restOfArray);
+
+        let newProductSection = document.getElementById("new_product");
+        let newProductContainer = newProductSection.firstElementChild;
+
+        restOfArray.map( product =>{
+    
+            let card = document.createElement("div");
+            card.classList = "card";
+            newProductContainer.appendChild(card);
+
+            let imgCard = document.createElement("div");
+            imgCard.classList = "card_img_container";
+            card.appendChild(imgCard);
+
+            let imgBackground = document.createElement("div");
+            imgBackground.classList = "card_background_image";
+            imgBackground.style = `background-image: url('./img/${product.image}');`;
+            imgCard.appendChild(imgBackground);
+
+            let cardText = document.createElement("div");
+            cardText.classList = "card_text";
+            card.appendChild(cardText);
+
+            cardText.insertAdjacentHTML("afterbegin", `<h4>${product.name}</h4>`);
+            cardText.insertAdjacentHTML("beforeend", "$20,000");
+
+            //     <div class="card">
+            //         <div class="card_img_container">
+            //             <div class="card_background_image"
+            //                 style="background-image: url('${product.image}');">
+            //             </div>
+            //         </div>
+            //         <div class="card_text">
+            //             <h4>${product.name}</h4> 
+            //             <p>${product.price}</p>
+            //         </div>
+            //     </div>
+            
+        })
+
+        document.getElementById("ver_mas").style = "display: none;";
     }, 
 
     openModal : function(props){

@@ -104,10 +104,48 @@
     }
     /* ###### General Class ###### */
     .btn{
+        min-height: 2rem;
+        position: relative;
         border: 0.0625rem solid var(--main-brown);
         padding: 0.25rem 0.5rem;
         border-radius: 0.25rem;
         background-color: transparent;
+        background-image: linear-gradient(-180deg, #FFC53A 0%, #EEB700 100%);
+        box-shadow: 0 1rem 1.25rem 0 rgba(37,0,0,0.5),
+							0 -0.25rem 1.5rem rgba(55, 10, 30, 0.2) inset,
+							0 0.75rem 0.5rem rgba(255,254,250, 0.1) inset,
+							0 0.25rem 0.5rem 0 rgba(82, 0, 11, 0.2) inset;
+    }
+    .btn::before {
+        content: "";
+        display: block;
+        height: 0.125rem;
+        position: absolute;
+        top: 0.1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% - 1.5rem);
+        background: #fff;
+        border-radius: 100%;
+        
+        opacity: 0.7;
+        background-image: linear-gradient(-270deg, rgba(255,255,255,0.00) 0%, #FFFFFF 20%, #FFFFFF 80%, rgba(255,255,255,0.00) 100%);
+    }
+    .btn::after {
+        content: "";
+        display: block;
+        height: 0.125rem;
+        position: absolute;
+        bottom: 0.75rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% - 1.5rem);
+        background: #fff;
+        border-radius: 100%;
+        
+        filter: blur(1px);
+        opacity: 0.05;
+        background-image: linear-gradient(-270deg, rgba(255,255,255,0.00) 0%, #FFFFFF 20%, #FFFFFF 80%, rgba(255,255,255,0.00) 100%);
     }
     .deleteScroll{
         overflow-y: hidden;
@@ -120,6 +158,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        align-self: baseline;
         justify-self: center;
         width: 13rem;
         height: 13rem;
@@ -208,7 +247,7 @@
     #ancheta_cta_mobile{
         padding: 0;
         font-size: 1.2rem;
-        box-shadow: -8px 8px 32px 8px rgba(55,10,30,0.2);
+        /* box-shadow: -8px 8px 32px 8px rgba(55,10,30,0.2); */
     }
     #ancheta_cta_mobile a{
         display: flex;
@@ -286,14 +325,16 @@
     }
     #ver_mas{
         width: 100%;
+        height: 3rem;
         /* margin-left: 1rem; */
         justify-self: center;
         align-self: center;
         display: flex;
         flex-direction: column;
+        justify-content: center;
         align-items: center;
         font-size: 1.2rem;
-        box-shadow: -8px 8px 32px 8px rgba(55,10,30,0.2);
+        /* box-shadow: -8px 8px 32px 8px rgba(55,10,30,0.2); */
     }
     #hero_bottom{
         width: 100%;
@@ -363,7 +404,7 @@
         text-align: center;
         font-size: 1.2rem;
         background-color: transparent;
-        box-shadow: -8px 8px 32px 8px rgba(55,10,30,0.2);
+        /* box-shadow: -8px 8px 32px 8px rgba(55,10,30,0.2); */
     }
     /* --- For MODAL AND MENU --- */
     .modal{
@@ -380,7 +421,7 @@
         transform-origin: center center;
         transition: 0.1s ease-in-out;
     }
-    .modal form{
+    .modal .form{
         position: relative;
         display: flex;
         flex-direction: column;
@@ -392,7 +433,7 @@
         color: var(--main-light);
         background-color: var(--main-brown);
     }
-    .modal form input{
+    .modal .form input{
         width: 100%;
         max-width: 32rem;
         height: 2.5rem;
@@ -403,7 +444,7 @@
         border-radius: 0.25rem;
         background-color: var(--main-light);
     }
-    .modal form .btn{
+    .modal .form .btn{
         width: 100%;
         height: 2.5rem;
         font-size: 1.2rem;
@@ -518,6 +559,7 @@
     .btn:hover{
         color: var(--main-light);
         background-color: var(--main-brown);
+        background-image: linear-gradient(-180deg, #52000B 0%, #370A1E 100%);
     }
     .btn:hover > a{
         color: var(--main-light);
@@ -544,7 +586,7 @@
         font-size: 1rem;
     }
     .list_container li a{
-        box-shadow: -8px 8px 32px 8px rgba(55,10,30,0.2);
+        /* box-shadow: -8px 8px 32px 8px rgba(55,10,30,0.2); */
     }
     #menu_bottom{
         display: flex;
@@ -588,7 +630,7 @@
         display: flex;
         align-items: center;
         width: 12rem;
-        box-shadow: -8px 8px 32px 8px rgba(55,10,30,0.2);
+        /* box-shadow: -8px 8px 32px 8px rgba(55,10,30,0.2); */
     }
     #navbar_mobile{
         display: none;
@@ -699,7 +741,6 @@
         max-width: 34rem;
     }
     #navbar_desktop{
-        padding: 0;
         padding-right: 1rem;
     }
     .list_container{
@@ -712,6 +753,7 @@
     }
     #menu_bottom{
         padding: 0;
+        padding-top: 1rem;
     }
     #searchbar{
         width: 13rem;
@@ -745,7 +787,11 @@
         height: 100%;
         min-height: 15rem;
     }
+    #ancheta_cta_desktop h3{
+        font-size: 3vw;
+    }
     #ancheta_cta_desktop p{
+        font-size: 1.7vw;
         margin-block-start: 0rem;
         margin-block-end: 0rem;
     }
@@ -755,7 +801,7 @@
         justify-content: center;
         margin-top: auto;
         margin-bottom: 0;
-        box-shadow: -8px 8px 32px 8px rgba(55,10,30,0.2);
+        /* box-shadow: -8px 8px 32px 8px rgba(55,10,30,0.2); */
     }
     #ancheta_cta_desktop svg{
         margin-right: 1rem;
