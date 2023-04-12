@@ -132,80 +132,6 @@
         </div>
         <div id="new_product">
             <div class="card_container">
-                <div class="card">
-                    <!-- 
-
-                <img src="./img/3d50dc_ed135dd95c1b4a969dd61005746d981b_mv2.jpg" alt="keto_brownie_con_helado"
-                    class="card_img">
-
-                -->
-                    <div class="card_img_container">
-                        <div class="card_background_image"
-                            style="background-image: url('./img/3d50dc_ed135dd95c1b4a969dd61005746d981b_mv2.jpg');">
-                        </div>
-                    </div>
-
-                    <div class="card_text">
-                        <h4>KETO BROWNIE CON HELADO</h4>
-                        <p>$20,000</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <!--
-                <img src="./img/3d50dc_0c97470f4b5d4a97bb564043940632ea_mv2.jpg" alt="cake_choco_mani" class="card_img">
-                -->
-                    <div class="card_img_container">
-                        <div class="card_background_image"
-                            style="background-image: url('./img/3d50dc_0c97470f4b5d4a97bb564043940632ea_mv2.jpg');">
-                        </div>
-                    </div>
-                    <div class="card_text">
-                        <h4>CAKE CHOCO MANI</h4>
-                        <p>$19,000</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <!--
-                <img src="./img/3d50dc_53d660f7a5c246d9a8109caf7507a318_mv2.jpg" alt="omelet_cookies" class="card_img">
-                -->
-                    <div class="card_img_container">
-                        <div class="card_background_image"
-                            style="background-image: url('./img/3d50dc_53d660f7a5c246d9a8109caf7507a318_mv2.jpg');">
-                        </div>
-                    </div>
-                    <div class="card_text">
-                        <h4>OMELET COOKIES</h4>
-                        <p>$8,000</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <!--
-                <img src="./img/3d50dc_53d660f7a5c246d9a8109caf7507a318_mv2.jpg" alt="omelet_cookies" class="card_img">
-                -->
-                    <div class="card_img_container">
-                        <div class="card_background_image"
-                            style="background-image: url('./img/3d50dc_53d660f7a5c246d9a8109caf7507a318_mv2.jpg');">
-                        </div>
-                    </div>
-                    <div class="card_text">
-                        <h4>OMELET COOKIES</h4>
-                        <p>$8,000</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <!--
-                <img src="./img/3d50dc_53d660f7a5c246d9a8109caf7507a318_mv2.jpg" alt="omelet_cookies" class="card_img">
-                -->
-                    <div class="card_img_container">
-                        <div class="card_background_image"
-                            style="background-image: url('./img/3d50dc_53d660f7a5c246d9a8109caf7507a318_mv2.jpg');">
-                        </div>
-                    </div>
-                    <div class="card_text">
-                        <h4>OMELET COOKIES</h4>
-                        <p>$8,000</p>
-                    </div>
-                </div>
             </div>
             <button id="ver_mas" class="btn">
                 Ver mas
@@ -335,14 +261,14 @@
     </footer>
     <div id="searchModal" class="modal hidden">
         <form>
-            <button id="closeModal" class="btn" onclick="app.closeModal('searchModal');">X</button>
+            <button id="closeSearchModal" class="btn closeModal" onclick="app.closeModal('searchModal');">X</button>
             <input type="search" name="search" id="search" placeholder="Producto...">
             <input type="button" value="Buscar" class="btn">
         </form>
     </div>
     <div id="loginModal" class="modal hidden">
         <form>
-            <button id="closeModal" class="btn" onclick="app.closeModal('loginModal');">X</button>
+            <button id="closeLoginModal" class="btn closeModal" onclick="app.closeModal('loginModal');">X</button>
             <p>¿Eres nuevo en este sitio? <span onclick="app.closeModal('loginModal');">Regístrate</span></p>
             <input type="text" name="login" id="login" placeholder="Login">
             <input type="password" name="password" id="password" placeholder="Password">

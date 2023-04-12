@@ -1,20 +1,92 @@
 console.log("Javascript is ON");
 
 const app = {
+    // Functions //
     init : function(){
-        console.log("INIT");
-        // Mettre en place l'affichage des cards
-        //
-        // Création de l'HTM, CSS de chaque produits avec seulement les 20 premiers en display block ou flex...
-        // A partir du 21ème les produits ont un "display:none"
+        console.log("INIT")
+        app.sequenceFetch();
     },
 
-    fetchDatas : function(){
-        console.log("On recherche dans les datas")
+    sequenceFetch : function(){
+        console.log("Fetch --- ON");
+
+        async function fetchAllProducts() {
+            const response = await fetch("./assets/data.json");
+            if (!response.ok) {
+                const message = `Un error occure : ${response.status}`;
+                throw new Error(message);
+            }
+            app.data = await response.json();
+            return console.log(app.data.products);
+        }
+        fetchAllProducts()
+        .then(() => {
+            console.log("On lance la séquence de création de carte");
+            app.getNewProducts(app.data.products);
+            app.createHomeCards(app.newAllProducts);
+        })
+        .catch(error => {
+            error.message; // 'An error has occurred: 404'
+        });
+    },
+
+    getNewProducts : function(products){
+        console.log("On classe les nouveaux produits");
+        app.newAllProducts = [];
+        products.map( product => {
+            if(product.new == true){
+                app.newAllProducts.push(product);
+            }
+        })
+    },
+
+    createHomeCards : function(array){
+        console.log("On crée 20 premières cartes des nouveaux produits");
+        let newProductSection = document.getElementById("new_product");
+        let newProductContainer = newProductSection.firstElementChild;
+        let account = 0
+        array.map( product =>{
+            if( product.new == true && account<20){
+                account++;
+                
+                let card = document.createElement("div");
+                card.classList = "card";
+                newProductContainer.appendChild(card);
+
+                let imgCard = document.createElement("div");
+                imgCard.classList = "card_img_container";
+                card.appendChild(imgCard);
+
+                let imgBackground = document.createElement("div");
+                imgBackground.classList = "card_background_image";
+                imgBackground.style = `background-image: url('./img/${product.image}');`;
+                imgCard.appendChild(imgBackground);
+
+                let cardText = document.createElement("div");
+                cardText.classList = "card_text";
+                card.appendChild(cardText);
+
+                cardText.insertAdjacentHTML("afterbegin", `<h4>${product.name}</h4>`);
+                cardText.insertAdjacentHTML("beforeend", "$20,000");
+
+            //     <div class="card">
+            //         <div class="card_img_container">
+            //             <div class="card_background_image"
+            //                 style="background-image: url('${product.image}');">
+            //             </div>
+            //         </div>
+            //         <div class="card_text">
+            //             <h4>${product.name}</h4> 
+            //             <p>${product.price}</p>
+            //         </div>
+            //     </div>
+            }
+        })
     },
 
     createCards : function(){
-        console.log("On crée toutes les cartes");
+        console.log("On crée toutes les cartes avec les datas");
+        console.log(app.products);
     },
     
     showCards : function(){
@@ -29,23 +101,10 @@ const app = {
         console.log("On ouvre la modal : ");
         console.log(props);
         let modalToShow = document.getElementById(props);
-        
         let noScroll = document.createAttribute("class");
         noScroll.value="deleteScroll";
         document.body.setAttributeNode(noScroll);
-
         modalToShow.classList.remove("hidden");
-    },
-    showModal : function(props){
-        console.log('TOTO');
-        let modalToShow = document.getElementById(props);
-
-        let noScroll = document.createAttribute("class");
-        noScroll.value="deleteScroll";
-        document.body.setAttributeNode(noScroll)
-
-        modalToShow.style.height = "100vh";
-        modalToShow.style.width = "100%";
     },
 
     closeModal : function(props){
@@ -59,11 +118,9 @@ const app = {
     openMenu : function(props){
         console.log("On ouvre le menu");
         let menuToOpen = document.getElementById(props);
-        
         let noScroll = document.createAttribute("class");
         noScroll.value="deleteScroll";
         document.body.setAttributeNode(noScroll)
-        
         menuToOpen.style.height = "100vh";
     },
 

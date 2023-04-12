@@ -107,7 +107,7 @@
         border: 0.0625rem solid var(--main-brown);
         padding: 0.25rem 0.5rem;
         border-radius: 0.25rem;
-        background-color: var(--main-light);
+        background-color: transparent;
     }
     .deleteScroll{
         overflow-y: hidden;
@@ -394,6 +394,7 @@
     }
     .modal form input{
         width: 100%;
+        max-width: 32rem;
         height: 2.5rem;
         margin-bottom: 0.5rem;
         padding-left: 1rem;
@@ -407,18 +408,19 @@
         height: 2.5rem;
         font-size: 1.2rem;
     }
-    #closeModal{
+    .closeModal{
         position: absolute;
         top: 1rem;
         right: 2rem;
-        width: auto;
-        height: auto;
+        max-width: 2rem;
+        height: 2rem;
         margin-bottom: 2rem;
         font-size: 1rem;
         font-weight: bold;
+        background-color: var(--main-light);
     }
     .modal p {
-        width: 100%;
+        width: auto;
         line-height: 2rem;
     }
     .modal span {
