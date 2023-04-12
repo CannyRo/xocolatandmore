@@ -51,6 +51,7 @@ const app = {
                 
                 let card = document.createElement("div");
                 card.classList = "card";
+                card.id = `${product.id}`
                 newProductContainer.appendChild(card);
 
                 let imgCard = document.createElement("div");
@@ -108,6 +109,7 @@ const app = {
     
             let card = document.createElement("div");
             card.classList = "card";
+            card.id = `${product.id}`
             newProductContainer.appendChild(card);
 
             let imgCard = document.createElement("div");
@@ -143,38 +145,5 @@ const app = {
         document.getElementById("ver_mas").style = "display: none;";
     }, 
 
-    openModal : function(props){
-        console.log("On ouvre la modal : ");
-        console.log(props);
-        let modalToShow = document.getElementById(props);
-        let noScroll = document.createAttribute("class");
-        noScroll.value="deleteScroll";
-        document.body.setAttributeNode(noScroll);
-        modalToShow.classList.remove("hidden");
-    },
-
-    closeModal : function(props){
-        console.log("On ferme la modal : ");
-        console.log(props);
-        let modalToClose = document.getElementById(props);
-        modalToClose.classList.add("hidden");
-        document.body.classList.remove("deleteScroll");
-    },
-
-    openMenu : function(props){
-        console.log("On ouvre le menu");
-        let menuToOpen = document.getElementById(props);
-        let noScroll = document.createAttribute("class");
-        noScroll.value="deleteScroll";
-        document.body.setAttributeNode(noScroll)
-        menuToOpen.style.height = "100vh";
-    },
-
-    closeMenu : function(props){
-        console.log("On ferme le menu");
-        let menuToClose = document.getElementById(props);
-        menuToClose.style.height = "0vh";
-        document.body.classList.remove("deleteScroll");
-    }
 };
 document.addEventListener("DOMContentLoaded", app.init)
