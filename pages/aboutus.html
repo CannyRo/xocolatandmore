@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xocolat & More - Rework website - Login</title>
+    <title>Xocolat & More - Rework website</title>
     <!-- Styles -->
     <link rel="stylesheet" href="../normalize.css">
     <link rel="stylesheet" href="../index.css">
 </head>
+
 <body class="">
     <header>
         <div id="logo_container">
@@ -50,7 +52,7 @@
                     </svg>
                     <span>0</span>
                 </div>
-                <div id="connect" class="btn" onclick="app.openModal('loginModal');">
+                <div id="connect" class="btn" onclick="navbarManager.openModal('loginModal');">
                     <svg xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 448 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                         <path
@@ -62,7 +64,7 @@
             </div>
         </nav>
         <nav id="navbar_mobile">
-            <div onclick="app.openModal('searchModal');">
+            <div onclick="navbarManager.openModal('searchModal');">
                 <svg xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 512 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                     <path
@@ -70,7 +72,7 @@
                         fill="currentColor" />
                 </svg>
             </div>
-            <div onclick="app.openModal('loginModal');">
+            <div onclick="navbarManager.openModal('loginModal');">
                 <a href="#">
                     <svg xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 448 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
@@ -80,7 +82,7 @@
                     </svg>
                 </a>
             </div>
-            <div onclick="app.openMenu('burgerMenuContainer');">
+            <div onclick="navbarManager.openMenu('burgerMenuContainer');">
                 <svg xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 448 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                     <path
@@ -90,8 +92,26 @@
             </div>
         </nav>
     </header>
-    <main>
-        LOGIN
+    <main id="mainAboutus">
+        <div id="narrative_title">
+            <h2>La Chocoaventura</h2>
+            <h3>de Xocolat & More</h3>
+        </div>
+        <div id="narrative_content">
+            <p>Chef, esposa, madre, sobreviviente cancer de mama, emprendedora venezolana</p>
+            <p>Una chocoaventura que emprendí hace varios años. Comencé en mi tierra natal, estudie en las mejores escuelas de chocolatería y pastelería, luego me especialice con chef internacionales. Al pasar los años fue dificíl ver como mis seres queridos enfermaban de diabetes, colesterol,  triglicéridos altos. Decidí buscar la solución para que ellos tuvieran una mejor alimentación e inicie la aventura para resolver este dilema.</p>
+            <p>Comencé estudiando nutrición buscando la manera de endulzar los postres, tarde muchos meses, la verdad no fue fácil, bastantes creaciones tuve que botar a la basura buscando esa receta ideal. Mi familia fue la prueba de fuego, conseguir que ellos disfrutaran de lo que hacía fue difícil pero con mucha dedicación y amor lo logre.</p>
+            <p>Llegue a este hermoso país casada con un Bogotano, encontré la mejor gastronomía pero sin opciones saludables a la mano. Así que decidí emprender este viaje con mucho cariño para deleitar paladares con mis conocimientos.</p>
+            <p>Nace Xocolot And More un pedacito de mi para ustedes, día a día trabajo para brindar el mejor sabor y servicio a todos los que nos visitan. Comprometida a ofrecer los productos más saludables con los mejores ingredientes, creando día a día postres que se adapten a las necesidades de mis clientes, sin azúcar, sin gluten, sin lácteos.</p>
+            <p>2018 recibí la noticia cáncer de mama. Hoy después de un largo camino soy sobreviviente. Sigo brindando o mejor de mi con una sonrisa, mayor responsabilidad y ganas de transmitir mi experiencia. Fe, familia, alimentación y mis doctores. Agradecida infinitamente.</p>
+            <p>Cada día busco ese postre que logre deleitar su paladar.</p>
+        </div>
+        <div id="narrative_signature">
+            <div id="cacao"></div>
+            <p>Gracias por su grata visita y espero, por mucho tiempo, seguir ofreciendo lo mejor.</p>
+            <h4>Jenny Camacho</h4>
+            <div></div>
+        </div>
     </main>
     <footer>
         <div id="footer_img">
@@ -192,15 +212,15 @@
     </footer>
     <div id="searchModal" class="modal hidden">
         <div class="form">
-            <button id="closeSearchModal" class="closeModal btn" onclick="app.closeModal('searchModal');">X</button>
+            <button id="closeSearchModal" class="closeModal btn" onclick="navbarManager.closeModal('searchModal');">X</button>
             <input type="search" name="search" id="search" placeholder="Producto...">
             <input type="button" value="Buscar" class="btn">
         </div>
     </div>
     <div id="loginModal" class="modal hidden">
         <div class="form">
-            <button id="closeLoginModal" class="closeModal btn" onclick="app.closeModal('loginModal');">X</button>
-            <p>¿Eres nuevo en este sitio? <span onclick="app.closeModal('loginModal');">Regístrate</span></p>
+            <button id="closeLoginModal" class="closeModal btn" onclick="navbarManager.closeModal('loginModal');">X</button>
+            <p>¿Eres nuevo en este sitio? <a href="./pages/register.html" onclick="navbarManager.closeModal('loginModal');">Regístrate</a></p>
             <input type="text" name="login" id="login" placeholder="Login">
             <input type="password" name="password" id="password" placeholder="Password">
             <input type="button" value="Ingresar" class="btn">
@@ -208,7 +228,7 @@
     </div>
     <div id="burgerMenuContainer" class="">
         <div class="menu">
-            <div id="closeMenu" onclick="app.closeMenu('burgerMenuContainer');" class="btn">
+            <div id="closeMenu" onclick="navbarManager.closeMenu('burgerMenuContainer');" class="btn">
                 <div></div>
                 <div></div>
             </div>
@@ -223,6 +243,7 @@
         </div>
 
     </div>
-    <script src="script.js"></script>
+    <script src="../scriptNavbar.js"></script>
 </body>
+
 </html>
