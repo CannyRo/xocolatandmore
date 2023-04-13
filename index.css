@@ -278,7 +278,7 @@
         display: none;
     }
 
-    #new_product{
+    #new_product, #product_container{
         display: flex;
         flex-direction: column;
         width: 100%;
@@ -566,6 +566,7 @@
         width: 100%;
         padding: 1rem 0;
     }
+
     .formControl{
         width: 100%;
         height: 3rem;
@@ -584,6 +585,11 @@
             outline 0.2s ease-in-out
             box-shadow 0.2s ease-in-out;
     }
+
+    #textarea_container .formControl{
+        height: 16rem;
+    }
+
     .formControl::placeholder{
         opacity: 0;
     }
@@ -690,6 +696,31 @@
         height: 0.125rem;
         background-color: var(--main-light);
     }
+    /* ---/// CONTACT PAGE ///--- */
+    #mainContact{
+        padding-bottom: 3rem;
+    }
+    #mainContact #form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+    #mainContact .btn{
+        width: 100%;
+        margin-top: 2rem;
+    }
+    /* ---/// PRODUCT PAGE ///--- */
+    #product_filter{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-bottom: 2rem;
+    }
+    #product_filter button{
+        margin: 0;
+        flex-grow: 1;
+    }
 }
 /* From 576px */
 @media only screen and (min-width: 36rem) {
@@ -770,7 +801,8 @@
         align-items: center;
         justify-content: space-around;
         width: 6.25rem;
-        padding: 0 0.5rem;
+        margin: 0 1rem;
+        /* padding: 0 0.5rem; */
     }
     #shopping_cart span{
         display: flex;
@@ -783,10 +815,14 @@
         background-color: var(--main-brown);
         border-radius: 2rem;
     }
+    #shopping_cart:hover > span{
+        color: var(--main-brown);
+        background-color: var(--main-light);
+    }
     #connect{
         display: flex;
         align-items: center;
-        width: 12rem;
+        width: 10rem;
         /* box-shadow: -8px 8px 32px 8px rgba(55,10,30,0.2); */
     }
     #navbar_mobile{
@@ -867,7 +903,7 @@
         background-color: var(--main-brown)
     }
     /* ---/// REGISTER PAGE ///--- */
-    .floatingLabel, .inputRadioContainer, #mainRegister .btn{
+    .floatingLabel, .inputRadioContainer, #mainRegister .btn, #mainContact .btn{
         width: 50%;
     }
     /* ---/// ABOUT US PAGE ///--- */
@@ -1002,7 +1038,7 @@
         margin-top: 2rem;
     }
     /* ---/// REGISTER PAGE ///--- */
-    .floatingLabel, .inputRadioContainer, #mainRegister .btn{
+    .floatingLabel, .inputRadioContainer, #mainRegister .btn, #mainContact .btn{
         max-width: 23rem;
     }
     /* ---/// ABOUT US PAGE ///--- */
@@ -1059,5 +1095,5 @@
 
 /*Should stay at the end to overwrite the current display property of element*/
 .hidden{
-    display: none;
+    display: none!important;
 }
