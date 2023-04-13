@@ -891,8 +891,11 @@
         background-color: var(--main-brown)
     }
     /* ---/// REGISTER PAGE ///--- */
-    .floatingLabel, .inputRadioContainer, #mainRegister .btn, #mainContact .btn{
+    .floatingLabel, .inputRadioContainer, #mainRegister .btn, #mainContact .btn, #loginModal .btn, #courseModal .btn{
         width: 50%;
+    }
+    #closeLoginModal, #closeCourseModal{
+        width: auto!important;
     }
     /* ---/// ABOUT US PAGE ///--- */
     #narrative_signature{
@@ -1026,8 +1029,11 @@
         margin-top: 2rem;
     }
     /* ---/// REGISTER PAGE ///--- */
-    .floatingLabel, .inputRadioContainer, #mainRegister .btn, #mainContact .btn{
+    .floatingLabel, .inputRadioContainer, #mainRegister .btn, #mainContact .btn, #loginModal .btn, #courseModal .btn{
         max-width: 23rem;
+    }
+    #closeLoginModal, #closeCourseModal{
+        width: auto!important;
     }
     /* ---/// ABOUT US PAGE ///--- */
     #narrative_content{

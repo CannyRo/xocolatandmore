@@ -279,7 +279,7 @@
                 <input type="password" id="passwordMobile" name="passwordMobile" class="formControl" placeholder="password"/>
                 <label htmlFor="passwordMobile">Password :</label>
             </div>
-            <input type="button" value="Ingresar" class="btn">
+            <button type="button" class="btn">Ingresar</button>
         </div>
     </div>
     <div id="courseModal" class="modal hidden">
@@ -287,8 +287,11 @@
             <button id="closeCourseModal" class="closeModal btn" onclick="navbarManager.closeModal('courseModal');">X</button>
             <h3>Solo para invitados</h3>
             <p>Por favor ingresa la contraseña a continuación.</p>
-            <input type="password" name="password_courses" id="password_courses" placeholder="Password">
-            <input type="button" value="Ingresar" class="btn">
+            <div class="floatingLabel">
+                <input type="password" id="passwordCourses" name="passwordCourses" class="formControl" placeholder="password"/>
+                <label htmlFor="passwordCourses">Password :</label>
+            </div>
+            <button type="button" class="btn">Ingresar</button>
         </div>
     </div>
     <div id="burgerMenuContainer" class="">
