@@ -238,6 +238,7 @@
     /* --- For MAIN --- */
     #hero_top{
         width: 100%;
+        padding-bottom: 3rem;
     }
     #hero_img_1, #hero_img_2{
         width: 100%;
@@ -435,19 +436,17 @@
         width: 100%;
         min-height: 60vh;
         padding: 1rem 2rem;
-        color: var(--main-light);
         background-color: var(--main-brown);
     }
+    .modal .form p{
+        color: var(--main-light);
+    }
+    .modal .form .floatingLabel .formControl{
+        color: var(--main-brown);
+        background-color: #fff;
+    }
     .modal .form input{
-        width: 100%;
-        max-width: 32rem;
-        height: 2.5rem;
-        margin-bottom: 0.5rem;
-        padding-left: 1rem;
-        font-size: 1.2rem;
-        border: 0.0625rem solid var(--main-brown);
-        border-radius: 0.25rem;
-        background-color: var(--main-light);
+        color: var(--main-brown);
     }
     .modal .form .btn{
         width: 100%;
@@ -773,9 +772,6 @@
         margin-bottom: 0.5rem;
         font-size: 1rem;
     }
-    .list_container li a{
-        /* box-shadow: -8px 8px 32px 8px rgba(55,10,30,0.2); */
-    }
     #menu_bottom{
         display: flex;
         justify-content: end;
@@ -783,18 +779,10 @@
         padding: 2rem 1rem 0 1rem;
     }
     #searchbar{
-        display: flex;
-        align-items: center;
-        width: 100%;
+        padding: 0;
     }
-    #searchbar input{
-        width: 100%;
-        height: 3rem;
-        padding-left: 0.5rem;
-        font-size: 1rem;
-        border: 0.0625rem  solid var(--main-brown);
-        border-radius: 0.25rem;
-        box-shadow: -8px 8px 32px 8px rgba(55,10,30,0.2);
+    #searchbar .formControl{
+        background-color: #fff;
     }
     #shopping_cart{
         display: flex;

@@ -68,7 +68,7 @@ const app = {
                 card.appendChild(cardText);
 
                 cardText.insertAdjacentHTML("afterbegin", `<h4>${product.name}</h4>`);
-                cardText.insertAdjacentHTML("beforeend", "$20,000");
+                cardText.insertAdjacentHTML("beforeend", `<p>$${product.price[0]},000</p>`);
 
             //     <div class="card">
             //         <div class="card_img_container">
@@ -126,7 +126,7 @@ const app = {
             card.appendChild(cardText);
 
             cardText.insertAdjacentHTML("afterbegin", `<h4>${product.name}</h4>`);
-            cardText.insertAdjacentHTML("beforeend", "$20,000");
+            cardText.insertAdjacentHTML("beforeend", `<p>$${product.price[0]},000</p>`);
 
             //     <div class="card">
             //         <div class="card_img_container">

@@ -55,7 +55,8 @@ const productManager = {
             // productManager.getProductsFamily("Tortas", productManager.allProduct);
             // productManager.getProductsFamily("Salados", productManager.allProduct);
             // productManager.getProductsFamily("Xoco Market", productManager.allProduct);
-            productManager.createCards(productManager.allProduct);
+            // productManager.createCards(productManager.allProduct);
+            productManager.allFamily();
         })
         .catch(error => {
             error.message; // 'An error has occurred: 404'
@@ -127,12 +128,6 @@ const productManager = {
             let categoryArray = product.visibility;
             console.log(`${product.name} => ${product.visibility}`)
             categoryArray.map( category => {
-                // if(category == family){
-                //     console.log("category : ", category);
-                //     console.log("family : ", family);
-                //     console.log("It's OK... ON PUSH");
-                //     temporaryArray.push(product);
-                // }
                 switch(category){
                     case "Todo Keto" :
                         productManager.ketoProduct.push(product);
@@ -166,9 +161,8 @@ const productManager = {
         let account = 0
         array.map( product =>{
             let card = document.createElement("div");
-            account<20 ? card.classList = "card" : card.classList = "card hidden"
-            // card.classList = "card";
-            card.id = `${product.id}`
+            account<20 ? card.classList = "card" : card.classList = "card hidden";
+            card.id = `${product.id}`;
             cardProductContainer.appendChild(card);
 
             let imgCard = document.createElement("div");
@@ -185,7 +179,7 @@ const productManager = {
             card.appendChild(cardText);
 
             cardText.insertAdjacentHTML("afterbegin", `<h4>${product.name}</h4>`);
-            cardText.insertAdjacentHTML("beforeend", "$20,000");
+            cardText.insertAdjacentHTML("beforeend", `<p>$${product.price[0]},000</p>`);
 
             let categoryContainer = document.createElement("div");
             categoryContainer.style = `display: flex; flex-direction: column; justify-content: end; align-items: end; width : 100%; height : auto; text-align: end;`;
@@ -236,6 +230,7 @@ const productManager = {
                 } else {
                     document.getElementById("ver_mas").classList.remove("hidden");
                 }
+                document.getElementById("title_category").innerText = "Nuevos productos";
                 break;
             case "Todo Keto" :
                 productManager.createCards(productManager.ketoProduct);
@@ -245,6 +240,7 @@ const productManager = {
                 } else {
                     document.getElementById("ver_mas").classList.remove("hidden");
                 }
+                document.getElementById("title_category").innerText = "Todo Keto";
                 break;
             case "Anchetas" :
                 productManager.createCards(productManager.giftProduct);
@@ -254,6 +250,7 @@ const productManager = {
                 } else {
                     document.getElementById("ver_mas").classList.remove("hidden");
                 }
+                document.getElementById("title_category").innerText = "Anchetas";
                 break;
             case "Postres" :
                 productManager.createCards(productManager.dessertProduct);
@@ -263,6 +260,7 @@ const productManager = {
                 } else {
                     document.getElementById("ver_mas").classList.remove("hidden");
                 }
+                document.getElementById("title_category").innerText = "Postres";
                 break;
             case "Tortas" :
                 productManager.createCards(productManager.cakeProduct);
@@ -272,6 +270,7 @@ const productManager = {
                 } else {
                     document.getElementById("ver_mas").classList.remove("hidden");
                 }
+                document.getElementById("title_category").innerText = "Tortas";
                 break;
             case "Salados" :
                 productManager.createCards(productManager.saltProduct);
@@ -281,6 +280,7 @@ const productManager = {
                 } else {
                     document.getElementById("ver_mas").classList.remove("hidden");
                 }
+                document.getElementById("title_category").innerText = "Salados";
                 break;
             case "Xoco Market" :
                 productManager.createCards(productManager.xocoProduct);
@@ -290,6 +290,7 @@ const productManager = {
                 } else {
                     document.getElementById("ver_mas").classList.remove("hidden");
                 }
+                document.getElementById("title_category").innerText = "Xoco Market";
                 break;
             default :
                 console.log("Filter variable Error");
@@ -299,6 +300,10 @@ const productManager = {
     },
 
     allFamily : function(){
+        document.getElementById("title_category").innerText = "Todos los productos";
+        for (const [key, value] of Object.entries(document.getElementById("product_filter").children)) {
+            document.getElementById(`${value.id}`).removeAttribute("active");
+        }
         let allFamilyContainer = document.getElementById("product_container");
         let allFamilyCard = allFamilyContainer.firstElementChild;
         allFamilyCard.innerHTML = "";
@@ -306,6 +311,7 @@ const productManager = {
             document.getElementById("ver_mas").classList.remove("hidden");
         }
         productManager.createCards(productManager.allProduct);
+        document.getElementById("allProduct").setAttribute("active", "");
     },
     
     showCards : function(){
@@ -375,7 +381,7 @@ const productManager = {
             otherCard.appendChild(otherCardText);
 
             otherCardText.insertAdjacentHTML("afterbegin", `<h4>${product.name}</h4>`);
-            otherCardText.insertAdjacentHTML("beforeend", "$20,000");
+            otherCardText.insertAdjacentHTML("beforeend", `<p>$${product.price[0]},000</p>`);
 
             let otherCategoryContainer = document.createElement("div");
             otherCategoryContainer.style = `display: flex; flex-direction: column; justify-content: end; align-items: end; width : 100%; height : auto; text-align: end;`;
