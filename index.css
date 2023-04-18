@@ -735,10 +735,10 @@
         margin-top: 2rem;
     }
     /* ---/// WORKSHOP PAGE ///--- */
-    #mainGalleryWorkshop{
+    #mainGalleryWorkshop, #mainGalleryInterview{
         padding: 1rem;
     }
-    #mainGalleryWorkshop h2{
+    #mainGalleryWorkshop h2, #mainGalleryInterview h2{
         margin-bottom: 1rem;
     }
     .couple_image_container{
@@ -1034,6 +1034,11 @@
     .couple_image_container .img_gal_small{
         width: 36%;
         max-width: 31.625rem;
+        height: auto;
+    }
+    .couple_image_container .img_gal_x_large{
+        width: 85%;
+        max-width: 75rem;
         height: auto;
     }
 }

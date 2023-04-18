@@ -39,6 +39,16 @@ const galleryManager = {
             newImageToShow = 1
         }
         galleryManager.showImage(newImageToShow);
-    }
+    },
+    changeImageBis : function(y){
+        let newImageToShow = y + galleryManager.currentSlide;
+        if(newImageToShow>34){
+            newImageToShow = 34
+        }
+        if(newImageToShow<1){
+            newImageToShow = 1
+        }
+        galleryManager.showImage(newImageToShow);
+    },
 };
 document.addEventListener("DOMContentLoaded", galleryManager.init)
