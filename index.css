@@ -721,7 +721,9 @@
         flex-grow: 1;
     }
     /* ---/// PROFILTE & ORDER PAGE ///--- */
+    
     #profile_container{
+        padding-top: 1rem;
         padding-bottom: 3rem;
     }
     #profile_container #form{
@@ -733,6 +735,29 @@
     #profile_container .btn{
         width: 100%;
         margin-top: 2rem;
+    }
+    #order_container{
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #order_container h2{
+        margin-bottom: 1rem;
+    }
+    #order_container table{
+        width: 100%;
+        max-width: 62rem;
+        border-radius: 0.25rem;
+    }
+    #order_container th{
+        padding: 1rem 0.5rem;
+    }
+    #order_container tbody{
+        background-color: rgba(238, 183, 0, 0.3);
+    }
+    #order_container tfoot{
+        background-color: var(--main-yellow);
     }
     /* ---/// WORKSHOP PAGE ///--- */
     #mainGalleryWorkshop, #mainGalleryInterview{
