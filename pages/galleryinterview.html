@@ -40,8 +40,9 @@
                 <li><a href="./contact.html" class="btn">Contacto</a></li>
             </ul>
             <div id="menu_bottom">
-                <div id="searchbar">
-                    <input type="search" name="search" id="search" placeholder="Buscar">
+                <div id="searchbar" class="floatingLabel">
+                    <input type="search" name="search" id="search" class="formControl" placeholder="Buscar">
+                    <label htmlFor="search">Buscar...</label>
                 </div>
                 <a id="shopping_cart" href="./profile.html" class="btn">
                     <svg xmlns="http://www.w3.org/2000/svg"
@@ -195,7 +196,10 @@
     <div id="searchModal" class="modal hidden">
         <div class="form">
             <button id="closeSearchModal" class="closeModal btn" onclick="navbarManager.closeModal('searchModal');">X</button>
-            <input type="search" name="search" id="search" placeholder="Producto...">
+            <div class="floatingLabel">
+                <input type="search" id="searchMobile" name="searchMobile" class="formControl" placeholder="Buscar"/>
+                <label htmlFor="searchMobile">Buscar...</label>
+            </div>
             <input type="button" value="Buscar" class="btn">
         </div>
     </div>
@@ -203,9 +207,15 @@
         <div class="form">
             <button id="closeLoginModal" class="closeModal btn" onclick="navbarManager.closeModal('loginModal');">X</button>
             <p>¿Eres nuevo en este sitio? <a href="./register.html" onclick="navbarManager.closeModal('loginModal');">Regístrate</a></p>
-            <input type="text" name="login" id="login" placeholder="Login">
-            <input type="password" name="password" id="password" placeholder="Password">
-            <input type="button" value="Ingresar" class="btn">
+            <div class="floatingLabel">
+                <input type="text" id="loginMobile" name="loginMobile" class="formControl" placeholder="Login"/>
+                <label htmlFor="loginMobile">Login :</label>
+            </div>
+            <div class="floatingLabel">
+                <input type="password" id="passwordMobile" name="passwordMobile" class="formControl" placeholder="password"/>
+                <label htmlFor="passwordMobile">Password :</label>
+            </div>
+            <button type="button" class="btn">Ingresar</button>
         </div>
     </div>
     <div id="courseModal" class="modal hidden">
@@ -213,8 +223,11 @@
             <button id="closeCourseModal" class="closeModal btn" onclick="navbarManager.closeModal('courseModal');">X</button>
             <h3>Solo para invitados</h3>
             <p>Por favor ingresa la contraseña a continuación.</p>
-            <input type="password" name="password_courses" id="password_courses" placeholder="Password">
-            <input type="button" value="Ingresar" class="btn">
+            <div class="floatingLabel">
+                <input type="password" id="passwordCourses" name="passwordCourses" class="formControl" placeholder="password"/>
+                <label htmlFor="passwordCourses">Password :</label>
+            </div>
+            <button type="button" class="btn">Ingresar</button>
         </div>
     </div>
     <div id="burgerMenuContainer" class="">

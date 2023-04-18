@@ -720,6 +720,106 @@
         margin: 0;
         flex-grow: 1;
     }
+    /* ---/// PROFILTE & ORDER PAGE ///--- */
+    #profile_container{
+        padding-bottom: 3rem;
+    }
+    #profile_container #form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+    #profile_container .btn{
+        width: 100%;
+        margin-top: 2rem;
+    }
+    /* ---/// WORKSHOP PAGE ///--- */
+    #mainGalleryWorkshop{
+        padding: 1rem;
+    }
+    #mainGalleryWorkshop h2{
+        margin-bottom: 1rem;
+    }
+    .couple_image_container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 1rem;
+    }
+    .couple_image_container .img_gal{ /* 210px*/ /*280px*/
+        width: 100%;
+        height: auto;
+    }
+    .img_gal_container{
+        animation-name: fade;
+        animation-duration: 1s;
+    }
+    .img_gal_container .img_gal_modal{ /* 210px*/ /*280px*/
+        width: 100%;
+        height: auto;
+    }
+    .couple_image_container img:first-child{
+        margin-bottom: 1rem;
+    }
+    .gallery_modal{
+        z-index: 15;
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(55, 10, 30, 0.5);
+        backdrop-filter: blur(0.7rem);
+        transition: 0.1s ease-in-out;
+    }
+    #close_gallery_modal{
+        z-index: 20;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        max-width: 2rem;
+        height: 2rem;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+        font-weight: bold;
+    }
+    .num_img{
+        color: var(--main-light);
+        text-align: center;
+        margin-bottom: 0.5rem;
+    }
+    .prev, .next{
+        z-index: 15;
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        max-width: 2rem;
+        max-height: 2rem;
+        padding: 0.5rem;
+        color: var(--main-light);
+        font-size: 1rem;
+        font-weight: bold;
+        border-radius: 0.25rem;
+        transition: background-color 0.3s ease;
+    }
+    .prev:hover, .next:hover{
+        background-color: var(--main-brown);
+    }
+    .prev{
+        left: 1rem;
+    }
+    .next{
+        right: 1rem;
+    }
+    @keyframes fade {
+        from {opacity: .4}
+        to {opacity: 1}
+    }
 }
 /* From 576px */
 @media only screen and (min-width: 36rem) {
@@ -891,7 +991,7 @@
         background-color: var(--main-brown)
     }
     /* ---/// REGISTER PAGE ///--- */
-    .floatingLabel, .inputRadioContainer, #mainRegister .btn, #mainContact .btn, #loginModal .btn, #courseModal .btn{
+    .floatingLabel, .inputRadioContainer, #mainRegister .btn, #mainContact .btn, #loginModal .btn, #courseModal .btn, #profile_container .btn{
         width: 50%;
     }
     #closeLoginModal, #closeCourseModal{
@@ -913,7 +1013,29 @@
         aspect-ratio: 1;
         top: -3rem;
     }
-    
+    /* ---/// WORKSHOP PAGE ///--- */
+    .couple_image_container{
+        flex-direction: row;
+    }
+    .couple_image_container img:first-child{
+        margin-bottom: 0;
+        margin-right: auto;
+    }
+    .couple_image_container .img_gal_large{
+        width: 64%;
+        max-width: 56.25rem;
+        height: auto;
+    }
+    .couple_image_container .img_gal_medium{
+        width: 48%;
+        max-width: 42.1875rem;
+        height: auto;
+    }
+    .couple_image_container .img_gal_small{
+        width: 36%;
+        max-width: 31.625rem;
+        height: auto;
+    }
 }
 /* From 768px */
 @media only screen and (min-width: 48rem) {
@@ -1029,7 +1151,7 @@
         margin-top: 2rem;
     }
     /* ---/// REGISTER PAGE ///--- */
-    .floatingLabel, .inputRadioContainer, #mainRegister .btn, #mainContact .btn, #loginModal .btn, #courseModal .btn{
+    .floatingLabel, .inputRadioContainer, #mainRegister .btn, #mainContact .btn, #loginModal .btn, #courseModal .btn, #profile_container .btn{
         max-width: 23rem;
     }
     #closeLoginModal, #closeCourseModal{
@@ -1038,6 +1160,14 @@
     /* ---/// ABOUT US PAGE ///--- */
     #narrative_content{
         max-width: 48rem;
+    }
+    /* ---/// WORKSHOP PAGE ///--- */
+    .gallery_container{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .couple_image_container{
+        width: calc( 50% - 1rem );
     }
 }
 /* From 992px */
@@ -1083,9 +1213,9 @@
 }
 
 /* Mobile and tablet etc... */
-@media only screen and (hover: none) and (pointer: coarse){
+/* @media only screen and (hover: none) and (pointer: coarse){
 
-}
+} */
 
 /*Should stay at the end to overwrite the current display property of element*/
 .hidden{
