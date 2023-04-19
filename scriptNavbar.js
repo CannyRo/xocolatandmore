@@ -34,8 +34,6 @@ const navbarManager = {
             }
         }
         navbarManager.closeMenu('burgerMenuContainer');
-        console.log("On ouvre la modal : ");
-        console.log(props);
         let modalToShow = document.getElementById(props);
         let noScroll = document.createAttribute("class");
         noScroll.value="deleteScroll";
@@ -43,8 +41,6 @@ const navbarManager = {
         modalToShow.classList.remove("hidden");
     },
     closeModal : function(props){
-        console.log("On ferme la modal : ");
-        console.log(props);
         let modalToClose = document.getElementById(props);
         modalToClose.classList.add("hidden");
         document.body.classList.remove("deleteScroll");
@@ -62,7 +58,6 @@ const navbarManager = {
         if(!courseModal.classList.contains("hidden")){
             coursehModal.classList.add("hidden");
         }
-        console.log("On ouvre le menu");
         let menuToOpen = document.getElementById(props);
         let noScroll = document.createAttribute("class");
         noScroll.value="deleteScroll";
@@ -70,7 +65,6 @@ const navbarManager = {
         menuToOpen.style.height = "100vh";
     },
     closeMenu : function(props){
-        console.log("On ferme le menu");
         let menuToClose = document.getElementById(props);
         menuToClose.style.height = "0vh";
         document.body.classList.remove("deleteScroll");
